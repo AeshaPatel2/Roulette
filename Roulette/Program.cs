@@ -13,23 +13,29 @@ namespace Roulette
 
      static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
-            string title =
-                          @"
- ██▀███   ▒█████   █    ██  ██▓    ▓█████▄▄▄█████▓▄▄▄█████▓▓█████ 
-▓██ ▒ ██▒▒██▒  ██▒ ██  ▓██▒▓██▒    ▓█   ▀▓  ██▒ ▓▒▓  ██▒ ▓▒▓█   ▀ 
-▓██ ░▄█ ▒▒██░  ██▒▓██  ▒██░▒██░    ▒███  ▒ ▓██░ ▒░▒ ▓██░ ▒░▒███   
-▒██▀▀█▄  ▒██   ██░▓▓█  ░██░▒██░    ▒▓█  ▄░ ▓██▓ ░ ░ ▓██▓ ░ ▒▓█  ▄ 
-░██▓ ▒██▒░ ████▓▒░▒▒█████▓ ░██████▒░▒████▒ ▒██▒ ░   ▒██▒ ░ ░▒████▒
-░ ▒▓ ░▒▓░░ ▒░▒░▒░ ░▒▓▒ ▒ ▒ ░ ▒░▓  ░░░ ▒░ ░ ▒ ░░     ▒ ░░   ░░ ▒░ ░
-  ░▒ ░ ▒░  ░ ▒ ▒░ ░░▒░ ░ ░ ░ ░ ▒  ░ ░ ░  ░   ░        ░     ░ ░  ░
-  ░░   ░ ░ ░ ░ ▒   ░░░ ░ ░   ░ ░      ░    ░        ░         ░   
-   ░         ░ ░     ░         ░  ░   ░  ░                    ░  ░
-                                                                  
-";
+            Console.WindowHeight = 40;
+            Console.WindowWidth = 100;
 
-            Console.WriteLine(title);
-            Console.WriteLine("Enter any key to begin!");
+            string title =
+                                              @"
+                     ██▀███   ▒█████   █    ██  ██▓    ▓█████▄▄▄█████▓▄▄▄█████▓▓█████ 
+                    ▓██ ▒ ██▒▒██▒  ██▒ ██  ▓██▒▓██▒    ▓█   ▀▓  ██▒ ▓▒▓  ██▒ ▓▒▓█   ▀ 
+                    ▓██ ░▄█ ▒▒██░  ██▒▓██  ▒██░▒██░    ▒███  ▒ ▓██░ ▒░▒ ▓██░ ▒░▒███   
+                    ▒██▀▀█▄  ▒██   ██░▓▓█  ░██░▒██░    ▒▓█  ▄░ ▓██▓ ░ ░ ▓██▓ ░ ▒▓█  ▄ 
+                    ░██▓ ▒██▒░ ████▓▒░▒▒█████▓ ░██████▒░▒████▒ ▒██▒ ░   ▒██▒ ░ ░▒████▒
+                    ░ ▒▓ ░▒▓░░ ▒░▒░▒░ ░▒▓▒ ▒ ▒ ░ ▒░▓  ░░░ ▒░ ░ ▒ ░░     ▒ ░░   ░░ ▒░ ░
+                      ░▒ ░ ▒░  ░ ▒ ▒░ ░░▒░ ░ ░ ░ ░ ▒  ░ ░ ░  ░   ░        ░     ░ ░  ░
+                      ░░   ░ ░ ░ ░ ▒   ░░░ ░ ░   ░ ░      ░    ░        ░         ░   
+                       ░         ░ ░     ░         ░  ░   ░  ░                    ░  ░
+                                                                  
+                        ";
+
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (title.Length / 2)) + "}", title));
+
+            string text = "Enter any key to begin";
+            Console.WriteLine(String.Format("{0," + ((Console.WindowWidth / 2) + (text.Length / 2)) +"}", text));
+
             Console.ResetColor();
             Console.ReadKey();
             Console.Clear();

@@ -12,16 +12,15 @@ namespace Roulette
 
     {
         private int winningNumber;
-
-
+        
         List<int> column1 = new List<int>();
         List<int> column2 = new List<int>();
         List<int> column3 = new List<int>();
 
         public int ArrayOfNumbers()
         {
-            int[] numbers = new int[37]
-            {0, 00, 1, 2, 4, 5, 6, 7, 8, 9, 10,
+            int[] numbers = new int[38]
+            {0, 00, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
                 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
                 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
                 31, 32, 33, 34, 35, 36};
@@ -36,13 +35,14 @@ namespace Roulette
             return winningNumber;
 
         }
-
         //assigning colors to the random numbers 
         public void Colors()
         {
             if (winningNumber == 0 || winningNumber == 00)
             {
                 Console.WriteLine("Green\n");
+                Console.WriteLine("Congratulation! You have won the highest bet");
+
             }
             else if (winningNumber >= 1 && winningNumber <= 36)
             {
@@ -91,7 +91,6 @@ namespace Roulette
             {
                 Console.WriteLine("High 19-38\n");
             }
-
         }
 
         //creating dozens 
@@ -124,7 +123,6 @@ namespace Roulette
                 }
             }
 
-
             for (int x = 2; x < 36; x += 3)
             {
                 column2.Add(x);
@@ -142,11 +140,8 @@ namespace Roulette
                 {
                     Console.WriteLine("Column: 1\n");
                 }
-
             }
-
         }
-
         //create a method Streets = create 12 streets with values. ex) st.1 has 1, 2, 3
         public void Streets()
         {
@@ -174,11 +169,8 @@ namespace Roulette
                 Console.WriteLine("Street: {0}, {1}, {2}\n", winningNumber, x, y);
             }
 
-
         }
-
         //Creating double rows
-
         public void DoubleRowsForColumnOne()
         {
             int oneUp = winningNumber + 1;
@@ -203,12 +195,8 @@ namespace Roulette
             {
                 Console.WriteLine($"Double Row: {winningNumber}, {oneUp}, {twoUp}, {right}, {rightOneUp}, {rightTwoUp}\nOR\n ");
                 Console.WriteLine($"Double Row: {winningNumber}, {oneUp}, {twoUp},{left}, {leftOneUp}, {leftTwoUp}\n");
-
-
             }
-
         }
-
         public void DoubleRowsForColumnTwo()
         {
             int up = winningNumber + 1;
@@ -219,7 +207,6 @@ namespace Roulette
             int left = winningNumber - 3;
             int bottomRight = winningNumber + 2;
             int bottomLeft = winningNumber - 4;
-
 
             if (winningNumber == 2)
             {
@@ -240,9 +227,7 @@ namespace Roulette
                 Console.WriteLine($"Double Rows: {winningNumber}, {up}, {down}, {topRight}, {right}, {bottomRight}\n\nOR\n");
                 Console.WriteLine($"Double Rows: {winningNumber}, {up}, {down}, {topLeft}, {left}, {bottomLeft}\n");
             }
-
         }
-
         public void DoubleRowsForColumnThree()
         {
             int oneDown = winningNumber - 1;
@@ -273,8 +258,6 @@ namespace Roulette
             }
 
         }
-
-
         public void SplitAndCorner()
         {
             int right = winningNumber + 3;
@@ -285,7 +268,7 @@ namespace Roulette
             int topLeft = winningNumber - 2;
             int downRight = winningNumber + 2;
             int downLeft = winningNumber - 4;
-           
+
 
             if (winningNumber == 1)
             {
@@ -311,7 +294,7 @@ namespace Roulette
             else if (column1.Contains(winningNumber) && winningNumber != 1 && winningNumber != 34)
             {
                 Console.WriteLine($"Possible Splits: {winningNumber}/{right}, {winningNumber}/{up}, and {winningNumber}/{left}\n ");
-              
+
                 Console.WriteLine($"Corner Bet: {winningNumber}, {right}, {down}, {downRight} and\n{winningNumber}, {left}, {downLeft}, {down}\n");
 
             }
@@ -337,13 +320,11 @@ namespace Roulette
             else if (column3.Contains(winningNumber) && winningNumber != 3 && winningNumber != 36)
             {
                 Console.WriteLine($"Possible Splits: {winningNumber}/{right}, {winningNumber}/{down}, and {winningNumber}/{left}\n ");
-               
+
                 Console.WriteLine($"Corner Bet: {winningNumber}, {right}, {down}, {downRight} and\n{winningNumber}, {left}, {downLeft}, {down}\n");
 
             }
         }
-
-       
 
     }
 }
